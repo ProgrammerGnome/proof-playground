@@ -23,7 +23,7 @@ Proof.
     set (eps := Rabs (l1 - l2) / 2).
     assert (Heps_pos : eps > 0).
     { unfold eps. apply Rdiv_lt_0_compat. 
-      apply Rabs_pos_lt. assumption. 
+      apply Rabs_pos_lt. lra. 
       apply Rlt_R0_R2. }
     
     (* Alkalmazzuk a definíciót mindkét határértékre ezzel az eps-sel *)
