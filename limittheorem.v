@@ -45,8 +45,9 @@ Proof.
     
     (* Háromszög-egyenlőtlenség használata az ellentmondáshoz *)
     (* |l1 - l2| <= |l1 - u N| + |u N - l2| *)
-    have H_tri := Rabs_triang (l1 - u N) (u N - l2).
-    replace (l1 - u N + (u N - l2)) with (l1 - l2) in H_tri by ring.
+    (*have H_tri := Rabs_triang (l1 - u N) (u N - l2).*)
+    pose proof (Rabs_triang (l1 - u N) (u N - l2)) as H_tri.
+    replace ((l1 - u N) + (u N - l2)) with (l1 - l2) in H_tri by ring.
     
     (* Átírjuk a távolságokat *)
     rewrite Rabs_minus_sym in H1.
